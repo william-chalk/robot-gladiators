@@ -69,6 +69,11 @@ var fight = function(enemyName) {
   } // end of while loop
 }; // end of fight function
 
+//Start game function
+var startGame = function(){
+    playerHealth = 100;
+    playerAttack = 10;
+    playerMoney = 10;
 // fight each enemy-robot by looping over them and fighting them one at a time
 for (var i = 0; i < enemyNames.length; i++) {
   // if player is still alive, keep fighting
@@ -94,3 +99,25 @@ for (var i = 0; i < enemyNames.length; i++) {
     break;
   }
 }
+endGame();
+}
+
+//function to end the game
+var endGame = function(){
+  if(playerHealth > 0){
+    window.alert("Great Job, you've survived the game! You now have a score of " + playerMoney + ".");
+  }
+  else{
+    window.alert("You've lost your robot in battle.");
+  }
+
+  var playerConfirm = window.confirm("Would you like to play again?");
+
+  if(playerConfirm){
+    startGame();
+  }
+  else{
+    window.alert("Thanks for playing!");
+  }
+};
+startGame();
