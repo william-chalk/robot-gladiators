@@ -141,8 +141,17 @@ var randomNumber = function(min,max){
   var value = Math.floor(Math.random() * (max - min + 1) + min);
   return value;
 }
+var getPlayerName = function(){
+  var name = "";
+
+  while(name === "" || name === null){
+    name = prompt("What is your robot's name?");
+  }
+
+  return name;
+}
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
